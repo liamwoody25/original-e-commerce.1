@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/css/main.css">
+  <title>Tektronics project</title>
+</head>
+<body>
+  <div class="container">
+
+   <!-- shopping section slide in -->
+    <div class="shopping-section">
+      <div class="cart-content"></div>
+    </div>
+   <!-- shopping section slide in -->
+
+
+
+
+    <!----- header-section ----->
+
+    <header>
+      <h1>Tektronics</h1>
+
+      <nav class="header-bar">
+        <a class="link" href="#">Popular Tech</a>
+        <a class="link" href="#">Todays Deals</a>
+      </nav>
+
+    <!-- ham-burger dropdown -->
+        <button aria-label="ham-burger" class="ham-burger">
+          <div class="burger-bar  bar-top"></div>
+          <div class="burger-bar  bar-center"></div>
+          <div class="burger-bar  bar-bottom"></div>
+        </button>
+    <!-- ham-burger dropdown -->
+
+
+    <!-- shopping bag slide in button -->
+      <button aria-label="cart-btn" class="cart-btn">
+        <i class="bi bi-bag"></i>
+        <span class="input" id="bag-output">0</span>
+      </button>
+    <!-- shopping bag slide in button -->
+
+    </header>
+
+  <!----- header-section ----->
+
+
+
+  
+  <!----- main-section ----->
+    <main>
+
+    <!--- hero-section --->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2>one stop shop to buy your tech</h2>
+          <button class="hero-btn">Shop Now</button>
+        </div>
+        <img class="hero-img" src="./public/assets/images/vista-wei-lzePW7ESwts-unsplash.jpg" alt="image of laptop and smartphone">
+      </section>
+    <!--- hero-section --->
+    
+
+
+    <!--- product-section --->
+      <section class="tech-products">
+          <h2>Popular Tech</h2>
+        <div class="product-cards">
+
+          <!--- product-card-1 --->
+            <article class="product-card">
+              <div class="card-text-content">
+                <h3>Macbook</h3>
+                <p>laptop</p>
+                <p class="item-price">$899</p>
+                <button aria-label="item-btn" class="item-btn">Add To Bag</button>
+              </div>
+              <img class="card-image" src="./public/assets/images/pexels-tuurt-macbook-jpg.jpg" alt="image of laptop">
+            </article>
+          <!--- product-card-1 --->
+
+
+          <!--- product-card-1 --->
+            <article class="product-card">
+              <div class="card-text-content">
+                <h3>Android</h3>
+                <p>smartwatch</p>
+                <p class="item-price">$399</p>
+                <button aria-label="item-btn" class="item-btn">Add To Bag</button>
+              </div>
+              <img class="card-image" src="./public/assets/images/rachit-tank-2cFZ_FB08U-smart-watch.jpg" alt="image of smartwatch">
+            </article>
+            
+          <!--- product-card-1 --->
+
+        </div>
+          
+      </section>
+
+
+    </main>
+  </div>
+  <script src="./public/js/script.js"></script>
+</body>
+</html>                 
