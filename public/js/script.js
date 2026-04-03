@@ -18,7 +18,7 @@ let bag = {output: 0, bagTotal: 0};
 
 
 function sendProductToBag(i) {
-  const bag = document.querySelectorAll('#bag-output')[0];
+  let bag = document.querySelectorAll('.bag-output')[0];
   const product = bagProducts[i]
   let displayQuantity = Number(bag.innerText) + 1;
 
@@ -37,7 +37,6 @@ function sendProductToBag(i) {
   cardImg.classList.add('card-img');
   cardImg.src = product.image;
   cardImg.alt = 'card image'
-  // these code is for creating the card product 
 
 
 
@@ -53,7 +52,6 @@ function sendProductToBag(i) {
 
   const cardPrice = document.createElement('p');
   cardPrice.textContent = `$${product.price}`;
-  // these codes are for the bag item contents
   
 
 
@@ -66,19 +64,49 @@ function sendProductToBag(i) {
   removeBtn.innerHTML = '<i class="bi bi-dash-square"></i>';
 
   const quantityOutput = document.createElement('span');
-  quantityOutput.classList.add('item-output');
-  quantityOutput.textContent = 0
+  quantityOutput.innerText = displayQuantity;
 
   const addBtn = document.createElement('button');
   addBtn.classList.add('increase-btn');
   addBtn.innerHTML = '<i class="bi bi-plus-square"></i>'
-  // these codes create the quantity button
+
 
 
   cardProduct.append(cardImg, productContent, quantityContent);
   productContent.append(productName, subTitle, cardPrice);
   quantityContent.append(removeBtn, quantityOutput, addBtn)
   bagContainer.append(cardProduct)
+
+
+
+// this eventlistener code is for when the user wants to remove a product from the bag
+  removeBtn.addEventListener('click', function(){
+    let bag = document.querySelectorAll('.bag-output')[0];
+    let displayQuantity = Number(bag.innerText) - 1;
+
+    if (displayQuantity < 0) {
+      displayQuantity = 0
+    }
+
+    bag.innerText = displayQuantity
+
+    if (displayQuantity === 0) {
+      cardProduct.remove(cardImg, productContent, quantityContent)
+    }
+  })
+
+
+// this eventlistener code is for when the user wants to add a product to the bag
+  addBtn.addEventListener('click', function(){
+    let bag = document.querySelectorAll('.bag-output')[0];
+    let displayQuantity = Number(bag.innerText) + 1;
+
+    if (displayQuantity > 10) {
+      displayQuantity  = 0;
+    }
+
+    bag.innerText = displayQuantity
+  })
 }
 
 
@@ -104,6 +132,8 @@ function hamBurgerMenu() {
     menuDropDown.style.display = 'none';
   }
 }
+
+
 
 
 

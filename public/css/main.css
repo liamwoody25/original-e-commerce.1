@@ -54,7 +54,7 @@ p {
   position: relative;
 }
 
-.input {
+#input {
   position: relative;
   font-size: 13px;
   display: flex;
