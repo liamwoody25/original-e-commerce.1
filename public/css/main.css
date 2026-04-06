@@ -216,7 +216,7 @@ header {
 /* shopping bag */
 
 .shopping-section {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 380px;
   height: 685px;
