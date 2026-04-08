@@ -215,6 +215,12 @@ header {
 
 /* shopping bag */
 
+.cart-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
 .shopping-section {
   position: fixed;
   top: 0;
@@ -267,7 +273,7 @@ header {
 }
 
 .card-img {
-  width: 45%;
+  width: 38%;
   border-radius: 10px 0px 0px 10px;
 }
 

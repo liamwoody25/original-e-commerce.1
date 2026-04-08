@@ -11,15 +11,24 @@ const bagProducts = [
     category: 'laptop',
     price: 899,
     image: './public/assets/images/pexels-tuurt-macbook-jpg.jpg',
+    inBag: 0
+  },
+  {
+    name: 'android',
+    category: 'smartwatch',
+    price: 399,
+    image: './public/assets/images/rachit-tank-2cFZ_FB08U-smart-watch.jpg',
+    inBag: 0
   },
 ]
 
 let bag = {output: 0, bagTotal: 0};
 
 
+
 function sendProductToBag(i) {
+  const product = bagProducts[i];
   let bag = document.querySelectorAll('.bag-output')[0];
-  const product = bagProducts[i]
   let displayQuantity = Number(bag.innerText) + 1;
 
   if (displayQuantity > 10) {
@@ -71,7 +80,7 @@ function sendProductToBag(i) {
   addBtn.innerHTML = '<i class="bi bi-plus-square"></i>'
 
 
-
+  // these codes are to display the product cards to the shopping section
   cardProduct.append(cardImg, productContent, quantityContent);
   productContent.append(productName, subTitle, cardPrice);
   quantityContent.append(removeBtn, quantityOutput, addBtn)
@@ -79,7 +88,7 @@ function sendProductToBag(i) {
 
 
 
-// this eventlistener code is for when the user wants to remove a product from the bag
+// this eventlistener code listens for when the user wants to remove a product from the bag
   removeBtn.addEventListener('click', function(){
     let bag = document.querySelectorAll('.bag-output')[0];
     let displayQuantity = Number(bag.innerText) - 1;
@@ -96,7 +105,8 @@ function sendProductToBag(i) {
   })
 
 
-// this eventlistener code is for when the user wants to add a product to the bag
+
+// this eventlistener code listens for when the user wants to add a product to the bag
   addBtn.addEventListener('click', function(){
     let bag = document.querySelectorAll('.bag-output')[0];
     let displayQuantity = Number(bag.innerText) + 1;
@@ -106,7 +116,18 @@ function sendProductToBag(i) {
     }
 
     bag.innerText = displayQuantity
+    addProduct(i)
   })
+
+}
+
+function addProduct(product,i) {
+  console.log('my items are', item)
+  product.inBag = 1
+
+  let item = {
+    [product.category]:product
+  }
 }
 
 
@@ -124,6 +145,7 @@ function cartDisplay(){
   }
 }
 
+
 // this function displays the dropdown menu
 function hamBurgerMenu() {
   if (burgerToggle.classList.toggle('enable')) {
@@ -140,7 +162,7 @@ function hamBurgerMenu() {
 // this eventlilstener code listens for the item btn when the user clicks on a product
 for (let i = 0; i < purchaseBtn.length; i++) {
   purchaseBtn[i].addEventListener('click', function(){
-   sendProductToBag(i)
+   sendProductToBag(bagProducts,[i])
   })
 }
 
