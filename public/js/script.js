@@ -20,6 +20,28 @@ const bagProducts = [
     image: './public/assets/images/rachit-tank-2cFZ_FB08U-smart-watch.jpg',
     inBag: 0
   },
+  {
+    name: 'iphone',
+    category: 'smartphone',
+    price: 699,
+    image: './public/assets/images/E9965BCB-3B0C-414F-9F91-smartphone.jpg',
+    inBag: 0
+  },
+  {
+    name: 'Headset',
+    category: 'accessory',
+    price: 250,
+    image: './public/assets/images/pexels-cottonbro-headphones-jpg.jpg',
+    inBag: 0
+  },
+  {
+    name: 'ipad',
+    category: 'tablet',
+    price: 499,
+    images: './public/assests/images/pexels-joshsorenson-tablet.png',
+    inBag: 0
+  }
+
 ]
 
 let bag = {output: 0, bagTotal: 0};
