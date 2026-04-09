@@ -54,7 +54,7 @@ p {
   position: relative;
 }
 
-#input {
+.input {
   position: relative;
   font-size: 13px;
   display: flex;
@@ -170,7 +170,7 @@ p {
 /***** body *****/
 
 .container {
-  margin: 14px;
+  margin: 0 auto;
   max-width: 375px;
   width: 92%;
 }

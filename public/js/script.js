@@ -28,7 +28,7 @@ let bag = {output: 0, bagTotal: 0};
 
 function sendProductToBag(i) {
   const product = bagProducts[i];
-  let bag = document.querySelectorAll('.bag-output')[0];
+  let bag = document.querySelectorAll('#bag-output')[0];
   let displayQuantity = Number(bag.innerText) + 1;
 
   if (displayQuantity > 10) {
@@ -49,7 +49,7 @@ function sendProductToBag(i) {
 
 
 
-  // these codes are for the bag item contents
+  // these codes create the bag item contents
   const productContent = document.createElement('div');
   productContent.classList.add('product-content-container');
 
@@ -73,7 +73,8 @@ function sendProductToBag(i) {
   removeBtn.innerHTML = '<i class="bi bi-dash-square"></i>';
 
   const quantityOutput = document.createElement('span');
-  quantityOutput.innerText = displayQuantity;
+  quantityOutput.classList.add('card-output')
+  quantityOutput.textContent = `${product.inBag}` ;
 
   const addBtn = document.createElement('button');
   addBtn.classList.add('increase-btn');
@@ -90,47 +91,42 @@ function sendProductToBag(i) {
 
 // this eventlistener code listens for when the user wants to remove a product from the bag
   removeBtn.addEventListener('click', function(){
-    let bag = document.querySelectorAll('.bag-output')[0];
-    let displayQuantity = Number(bag.innerText) - 1;
 
-    if (displayQuantity < 0) {
+  })
+
+
+
+// this eventlistener code listens for when the user clicks add button for the product to the bag
+  addBtn.addEventListener('click', function(){
+    const bag = document.querySelectorAll('.card-output')[i];
+    let displayQuantity =  Number(bag.innerText) + 1;
+
+    if (displayQuantity > 10) {
       displayQuantity = 0
     }
 
-    bag.innerText = displayQuantity
+  bag.innerText = displayQuantity
 
-    if (displayQuantity === 0) {
-      cardProduct.remove(cardImg, productContent, quantityContent)
-    }
-  })
-
-
-
-// this eventlistener code listens for when the user wants to add a product to the bag
-  addBtn.addEventListener('click', function(){
-    let bag = document.querySelectorAll('.bag-output')[0];
-    let displayQuantity = Number(bag.innerText) + 1;
-
-    if (displayQuantity > 10) {
-      displayQuantity  = 0;
-    }
-
-    bag.innerText = displayQuantity
-    addProduct(i)
-  })
+ 
+    addProduct(product)
+})
 
 }
 
-function addProduct(product,i) {
-  console.log('my items are', item)
-  product.inBag = 1
+function addProduct(product) {
+  console.log(product )
 
-  let item = {
-    [product.category]:product
+  product.inBag += 1
+
+  if (bag[product.name]) {
+    bag[product.name].displayQuantity += 1
+  } else {
+    bag[product.name] = {
+      ...product,
+      inBag: 1
+    }
   }
 }
-
-
 
 
 
@@ -162,7 +158,7 @@ function hamBurgerMenu() {
 // this eventlilstener code listens for the item btn when the user clicks on a product
 for (let i = 0; i < purchaseBtn.length; i++) {
   purchaseBtn[i].addEventListener('click', function(){
-   sendProductToBag(bagProducts,[i])
+   sendProductToBag(i)
   })
 }
 
