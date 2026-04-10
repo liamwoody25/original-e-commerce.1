@@ -96,7 +96,7 @@ function sendProductToBag(i) {
 
   const quantityOutput = document.createElement('span');
   quantityOutput.classList.add('card-output')
-  quantityOutput.textContent = `${product.inBag}` ;
+  quantityOutput.textContent = `${product.inBag}`;
 
   const addBtn = document.createElement('button');
   addBtn.classList.add('increase-btn');
