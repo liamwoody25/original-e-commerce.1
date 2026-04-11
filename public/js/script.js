@@ -24,7 +24,7 @@ const bagProducts = [
     name: 'iphone',
     category: 'smartphone',
     price: 699,
-    image: './public/assets/images/E9965BCB-3B0C-414F-9F91-smartphone.jpg',
+    image: './public/assets/images/allison-saeng-iphone-unsplash.png',
     inBag: 0
   },
   {
@@ -38,7 +38,7 @@ const bagProducts = [
     name: 'ipad',
     category: 'tablet',
     price: 499,
-    images: './public/assests/images/pexels-joshsorenson-tablet.png',
+    image: './public/assets/images/pexels-joshsorenson-tablet.png',
     inBag: 0
   }
 
@@ -131,7 +131,9 @@ function sendProductToBag(i) {
 
  
     addProduct(product)
+    document.getElementById('bag-output').textContent = displayQuantity;
 })
+
 
 }
 
