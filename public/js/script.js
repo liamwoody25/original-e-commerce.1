@@ -60,6 +60,8 @@ function sendProductToBag(i) {
   bag.innerText = displayQuantity;
 
 
+
+
   // these code is for creating the card product 
   const cardProduct = document.createElement('article');
   cardProduct.classList.add('product-item');
@@ -113,7 +115,20 @@ function sendProductToBag(i) {
 
 // this eventlistener code listens for when the user wants to remove a product from the bag
   removeBtn.addEventListener('click', function(){
+    const bag = document.querySelectorAll('.card-output')[i];
+    let displayQuantity = Number(bag.innerText) - 1;
 
+    if (displayQuantity < 0) {
+      displayQuantity = 0;
+    }
+
+    bag.innerText = displayQuantity
+
+    if (displayQuantity === 0) {
+      cardProduct.remove(cardImg, productContent, quantityContent )
+    }
+    document.getElementById('bag-output').innerText =  displayQuantity;
+    
   })
 
 
@@ -127,16 +142,22 @@ function sendProductToBag(i) {
       displayQuantity = 0
     }
 
-  bag.innerText = displayQuantity
+    bag.innerText = displayQuantity
 
- 
     addProduct(product)
-    document.getElementById('bag-output').textContent = displayQuantity;
+   
+    document.getElementById('bag-output').textContent = displayQuantity ;
+
+    
+   
 })
 
 
 }
 
+
+
+// this function is for adding muliple products to the shopping bag
 function addProduct(product) {
   console.log(product )
 
