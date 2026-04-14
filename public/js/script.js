@@ -4,6 +4,7 @@ const burgerToggle = document.querySelector('.ham-burger');
 const cartOffScreen = document.querySelector('.shopping-section');
 const menuDropDown = document.querySelector('.header-bar');
 const bagContainer = document.querySelector('.cart-content');
+const bagTextHolder = document.querySelector('.bag-placeholder-content');
 
 const bagProducts = [
   {
@@ -126,6 +127,7 @@ function sendProductToBag(i) {
 
     if (displayQuantity === 0) {
       cardProduct.remove(cardImg, productContent, quantityContent )
+      bagTextHolder.style.display = 'block'
     }
     document.getElementById('bag-output').innerText =  displayQuantity;
     
@@ -147,11 +149,19 @@ function sendProductToBag(i) {
     addProduct(product)
    
     document.getElementById('bag-output').textContent = displayQuantity ;
-
-    
    
 })
 
+// this code displays the total price when the buy now button is clicked 
+  const bagTotal = document.createElement('div');
+  bagTotal.classList.add('bag-price-container');
+
+  const totalHd = document.createElement('h4');
+  totalHd.textContent = ''
+
+ if (displayQuantity) {
+  bagTextHolder.style.display = 'none'
+ } 
 
 }
 

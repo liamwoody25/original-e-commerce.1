@@ -280,6 +280,17 @@ header {
   border-radius: 10px 0px 0px 10px;
 }
 
+.bag-placeholder-content {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  top: 50px;
+  position: relative;
+  left: 34px;
+}
+
+
+
 /* shopping bag */
 
 
