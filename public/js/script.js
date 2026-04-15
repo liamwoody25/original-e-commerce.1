@@ -5,6 +5,7 @@ const cartOffScreen = document.querySelector('.shopping-section');
 const menuDropDown = document.querySelector('.header-bar');
 const bagContainer = document.querySelector('.cart-content');
 const bagTextHolder = document.querySelector('.bag-placeholder-content');
+const priceContent = document.querySelector('.bag-price-container')
 
 const bagProducts = [
   {
@@ -128,8 +129,10 @@ function sendProductToBag(i) {
     if (displayQuantity === 0) {
       cardProduct.remove(cardImg, productContent, quantityContent )
       bagTextHolder.style.display = 'block'
+      priceContent.style.display = 'none'
     }
     document.getElementById('bag-output').innerText =  displayQuantity;
+    
     
   })
 
@@ -147,21 +150,36 @@ function sendProductToBag(i) {
     bag.innerText = displayQuantity
 
     addProduct(product)
-   
+
     document.getElementById('bag-output').textContent = displayQuantity ;
+    
    
 })
 
+
 // this code displays the total price when the buy now button is clicked 
-  const bagTotal = document.createElement('div');
-  bagTotal.classList.add('bag-price-container');
+  const bagDetails = document.createElement('div');
+  bagDetails.classList.add('bag-price-content');
+
+  const bagText = document.createElement('p');
+  // bagText.classList.add('')
+  bagText.textContent = 'postage/packaging';
+
+  const subHd = document.createElement('p');
+  subHd.textContent = 'SubTotal'
 
   const totalHd = document.createElement('h4');
-  totalHd.textContent = ''
+  totalHd.textContent = 'Total Price'
+
+  bagDetails.append(bagText, subHd, totalHd)
+  priceContent.append(bagDetails);
 
  if (displayQuantity) {
   bagTextHolder.style.display = 'none'
- } 
+  priceContent.style.display = 'block'
+ } else {
+  priceContent.style.display = 'none'
+ }
 
 }
 
