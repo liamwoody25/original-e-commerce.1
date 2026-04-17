@@ -12,14 +12,14 @@ const bagProducts = [
     name: 'macbook',
     category: 'laptop',
     price: 899,
-    image: './public/assets/images/pexels-tuurt-macbook-jpg.jpg',
+    image: './public/assets/images/pexels-anna-nekrashevich-macbook.png',
     inBag: 0
   },
   {
     name: 'android',
     category: 'smartwatch',
     price: 399,
-    image: './public/assets/images/rachit-tank-2cFZ_FB08U-smart-watch.jpg',
+    image: './public/assets/images/andrey-matveev-msartwatch-unsplash.png',
     inBag: 0
   },
   {
@@ -219,8 +219,10 @@ function cartDisplay(){
 function hamBurgerMenu() {
   if (burgerToggle.classList.toggle('enable')) {
     menuDropDown.style.display = 'flex';
+    menuDropDown.style.display = 'block'
   } else {
     menuDropDown.style.display = 'none';
+    
   }
 }
 
