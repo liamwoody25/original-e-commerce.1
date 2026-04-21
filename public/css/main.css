@@ -284,6 +284,7 @@ header {
 .card-img {
   width: 38%;
   border-radius: 10px 0px 0px 10px;
+ 
 }
 
 .bag-placeholder-content {
@@ -304,16 +305,38 @@ header {
   justify-content: space-between;
   border-radius: 15px;
   background-color: #98c1d9;
-  gap: 10px;
+  gap: 20px;
 
 }
 
-.bag-price-content > p {
+.bag-price-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.price-text {
+  margin: 0;
+}
+
+.shipping-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.price-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.price-content > p {
   margin: 0;
 }
 
 .bag-price-content > h4 {
-  margin: 0;
+  margin-left: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* shopping bag */
