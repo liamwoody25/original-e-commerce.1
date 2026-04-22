@@ -57,8 +57,8 @@ let bag = {output: 0, bagTotal: 0};
 
 
 
-function sendProductToBag(index) {
-  const product = bagProducts[0];
+function sendProductToBag(i) {
+  const product = bagProducts[i];
   let bag = document.querySelectorAll('#bag-output')[0];
   let displayQuantity = Number(bag.innerText) + 1;
 
@@ -69,7 +69,6 @@ function sendProductToBag(index) {
 
   bag.innerText = displayQuantity;
 
-  
   
 
   // these code is for creating the card product 
@@ -116,7 +115,7 @@ function sendProductToBag(index) {
 
 
   // these codes are to display the product cards to the shopping section
-  cardProduct.append(cardImg, productContent, quantityContent);
+  cardProduct.prepend(cardImg, productContent, quantityContent);
   productContent.append(productName, subTitle, cardPrice);
   quantityContent.append(removeBtn, quantityOutput, addBtn)
   bagContainer.append(cardProduct)
@@ -125,7 +124,7 @@ function sendProductToBag(index) {
 
 // this eventlistener code listens for when the user wants to remove a product from the bag
   removeBtn.addEventListener('click', function(){
-    const bag = document.querySelectorAll('.card-output')[0];
+    const bag = document.querySelectorAll('.card-output')[i];
     let displayQuantity = Number(bag.innerText) - 1;
 
     if (displayQuantity < 0) {
@@ -141,14 +140,13 @@ function sendProductToBag(index) {
     }
     document.getElementById('bag-output').innerText =  displayQuantity;
     
-    
   })
 
 
 
 // this eventlistener code listens for when the user clicks add button for the product to the bag
   addBtn.addEventListener('click', function(){
-    const bag = document.querySelectorAll('.card-output')[0];
+    const bag = document.querySelectorAll('.card-output')[i];
     let displayQuantity =  Number(bag.innerText) + 1;
 
     if (displayQuantity > 10) {
@@ -180,9 +178,12 @@ function sendProductToBag(index) {
 
 
 
-function updateBag() {
+function updateBag(i) {
   
   // this code adds the the price content to the bag icon
+
+  priceContent.innerHTML = ''
+
   const totalContent = document.createElement('div');
   totalContent.classList.add('bag-price-content');
 
@@ -202,14 +203,15 @@ function updateBag() {
   totalText.textContent = 'Total Price'
 
   const fullPrice = document.createElement('h4');
+  fullPrice.textContent = 
   
 
   // this code displays the price content to the bag
   totalContent.append(shipContent, subContent,)
   shipContent.append(priceHd)
-  subContent.append(totalText)
+  subContent.append(totalText, fullPrice)
 
-  priceContent.appendChild(totalContent)
+  priceContent.append(totalContent)
 }
 
 
@@ -240,14 +242,11 @@ function hamBurgerMenu() {
 
 
 // this eventlilstener code listens for the item btn when the user clicks on a product
-purchaseBtn.forEach(function(btn,index){
-  btn.addEventListener('click', function(){
-    sendProductToBag(index)
+for (let i = 0; i < purchaseBtn.length; i++) {
+  purchaseBtn[i].addEventListener('click', function(){
+    sendProductToBag(i)
     updateBag()
   })
-})
-for (let i = 0; i < purchaseBtn.length; i++) {
-  
 }
 
 cartBtn.addEventListener('click', function(){
