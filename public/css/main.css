@@ -21,7 +21,7 @@ h2 {
 
 h3 {
   font-family: 'Cascadia Mono', sans-serif;
-  color: #023e8a;
+  color: #fffcf2;
   margin: 0;
 }
 
@@ -51,7 +51,7 @@ p {
 }
 .bi-bag {
   font-size: 24px;
-  color: #98c1d9;
+  color: #293241;
   cursor: pointer;
   position: relative;
 }
@@ -183,7 +183,7 @@ p {
 
 body {
   margin: 0;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 /***** body *****/
@@ -236,7 +236,7 @@ header {
   top: 0;
   width: 380px;
   height: 685px;
-  background-color: #e7ecef;
+  background-color: #adb5bd;
   right: -455px;
   transition-property: right;
   transition-duration: .9s;
@@ -282,8 +282,9 @@ header {
 }
 
 .card-img {
-  width: 38%;
+  width: 39%;
   border-radius: 10px 0px 0px 10px;
+  background-color: #edede9;
  
 }
 
@@ -306,6 +307,7 @@ header {
   border-radius: 15px;
   background-color: #98c1d9;
   gap: 20px;
+  box-shadow: 0 3px 10px -7px black;
 
 }
 
@@ -383,7 +385,7 @@ header {
 /**** product section  ****/
 
 .tech-products {
-  background-color: #e7ecef;
+  background-color: #415a77;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 15px;
@@ -391,7 +393,7 @@ header {
 }
 
 .tech-products > h2 {
-  color: #274c77;
+  color: #fffcf2;
   margin: 0;
 }
 
@@ -406,7 +408,7 @@ header {
 .product-card {
   width: 80%;
   display: flex;
-  background-color: #98c1d9;
+  background-color: #ced4da;
   justify-content: space-between;
   border-radius: 15px;
   box-shadow: 0px 6px 14px -8px black;
@@ -417,7 +419,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .card-image {
@@ -429,11 +431,7 @@ header {
 
 .card-text-content {
   text-align: center;
-  padding: 0px 24px;
-}
-
-.btn-content {
- 
+  padding: 0px;
 }
 
 .card-text-content > h3 {
@@ -510,7 +508,7 @@ header {
     .product-cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 20px;
       justify-content: space-around;
     }
 

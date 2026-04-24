@@ -209,7 +209,7 @@ function updateBag(i) {
   // this code displays the price content to the bag
   totalContent.append(shipContent, subContent,)
   shipContent.append(priceHd)
-  subContent.append(totalText, fullPrice)
+  subContent.append(totalText)
 
   priceContent.append(totalContent)
 }
